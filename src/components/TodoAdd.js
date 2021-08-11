@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import classes from "./TodoAdd.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
@@ -10,6 +10,15 @@ function TodoAdd() {
   const [items, setItems] = useState([]);
   const [toggleButton, setToggleButton] = useState(false);
   const [editItemId, setEditItemId] = useState(0);
+  const [firstRendering, setFirstRendering] = useState(true);
+
+  useEffect(() => {
+    if (firstRendering) {
+      setFirstRendering(false);
+    } else {
+      alert("Data Updated");
+    }
+  }, [items]);
 
   const addItems = () => {
     if (!inputData) {
