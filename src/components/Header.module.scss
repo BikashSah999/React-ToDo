@@ -1,0 +1,16 @@
+.header{
+  background: #9e9e9e;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  width: calc(100% - 4rem);
+  .logo{
+    width: 70%;
+  }
+  .header_content{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
